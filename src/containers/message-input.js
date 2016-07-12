@@ -1,5 +1,6 @@
 import React from 'react';
 import MessageModel from '../models/MessageModel';
+import BottomBar from '../components/bottom-bar';
 
 class MessageInput extends React.Component {
   constructor() {
@@ -31,12 +32,16 @@ class MessageInput extends React.Component {
 
   render() {
     return (
-      <div style={ this.style }>
+      <BottomBar style={ this.style }>
         <form onSubmit={ this.sendMessage.bind(this) }>
-          <textarea ref="newMessage" placeholder="Type here..."></textarea>
-          <input type="submit" value="Send" />
+          <input type="submit" value="Send" style={{ float: "right" }} />
+          <textarea
+            ref="newMessage"
+            placeholder="Type here..."
+            style={{ display: "block", width: "90%"}}>
+          </textarea>
         </form>
-      </div>
+      </BottomBar>
     );
   }
 }
