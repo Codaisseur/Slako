@@ -32,10 +32,12 @@ class SetUsername extends React.Component {
 
   renderUserForm() {
     return (
-      <form onSubmit={ this.onSubmit.bind(this) }>
-        <input ref="newUsername" type="text" placeholder="What's your name?" />
-        <input type="submit" value="Register" />
-      </form>
+      <div style={ this.baseStyle}>
+        <form onSubmit={ this.onSubmit.bind(this) }>
+          <input ref="newUsername" type="text" placeholder="What's your name?" />
+          <input type="submit" value="Register" />
+        </form>
+      </div>
     );
   }
 
@@ -46,7 +48,7 @@ class SetUsername extends React.Component {
 
   renderGreeting() {
     return (
-      <div style={ this.baseStyle }>
+      <div style={ this.baseStyle}>
         <p>
           Hi, { this.props.username }!
           (<a href="#" onClick={ this.resetUser.bind(this) }>not you?</a>)
