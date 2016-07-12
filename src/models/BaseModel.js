@@ -16,7 +16,7 @@ class BaseModel {
     this.resources = [];
 
     this.service.find(function(error, resources) {
-      this.resources = resources.data;
+      this.resources = resources;
       this.inform();
     }.bind(this));
 
