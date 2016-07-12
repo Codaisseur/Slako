@@ -17,7 +17,11 @@ class Channel extends React.Component {
   updateMessages() {
     this.setState({
       messages: this.model.resources
-    });
+    }, this.setScrollTop.bind(this));
+  }
+
+  setScrollTop() {
+    window.scrollTo(0,document.body.scrollHeight);
   }
 
   render() {

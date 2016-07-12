@@ -6,6 +6,14 @@ class MessageInput extends React.Component {
     super();
 
     this.model = new MessageModel();
+
+    this.style = {
+      position: 'fixed',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      height: 50
+    };
   }
 
   sendMessage(event) {
@@ -23,7 +31,7 @@ class MessageInput extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={ this.style }>
         <form onSubmit={ this.sendMessage.bind(this) }>
           <textarea ref="newMessage" placeholder="Type here..."></textarea>
           <input type="submit" value="Send" />
