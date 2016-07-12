@@ -19,10 +19,18 @@ class SetUsername extends React.Component {
     );
   }
 
+  resetUser(event) {
+    event.preventDefault();
+    this.props.onChange("guest");
+  }
+
   renderGreeting() {
     return (
       <div>
-        <p>Hi, { this.props.username }!</p>
+        <p>
+          Hi, { this.props.username }!
+          (<a href="#" onClick={ this.resetUser.bind(this) }>not you?</a>)
+        </p>
       </div>
     );
   }
