@@ -4,4 +4,6 @@ export default {
   tertiary: "#64e2a6",
 
   lightGrey: "#e6e6e6",
+  grey: "#c2c2c2",
+  darkGrey: "#939393",
 };

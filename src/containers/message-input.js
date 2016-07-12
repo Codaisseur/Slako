@@ -1,6 +1,7 @@
 import React from 'react';
 import MessageModel from '../models/MessageModel';
 import BottomBar from '../components/bottom-bar';
+import ColorSet from '../styles/ColorSet';
 
 class MessageInput extends React.Component {
   constructor() {
@@ -14,6 +15,23 @@ class MessageInput extends React.Component {
       left: 0,
       right: 0,
       height: 50
+    };
+
+    this.buttonStyle = {
+      float: "right",
+      backgroundColor: ColorSet.primary,
+      color: "#fff",
+      padding: "5px 10px",
+      display: "inline-block",
+      border: "1px solid #999",
+      borderRadius: "5px"
+    };
+
+    this.inputStyle = {
+      display: "block",
+      width: "90%",
+      border: "1px solid #999",
+      borderRadius: "5px"
     };
   }
 
@@ -34,11 +52,11 @@ class MessageInput extends React.Component {
     return (
       <BottomBar style={ this.style }>
         <form onSubmit={ this.sendMessage.bind(this) }>
-          <input type="submit" value="Send" style={{ float: "right" }} />
+          <input type="submit" value="Send" style={ this.buttonStyle } />
           <textarea
             ref="newMessage"
             placeholder="Type here..."
-            style={{ display: "block", width: "90%"}}>
+            style={ this.inputStyle }>
           </textarea>
         </form>
       </BottomBar>

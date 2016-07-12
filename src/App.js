@@ -4,6 +4,7 @@ import Header from './containers/header';
 import Channel from './containers/channel';
 import MessageInput from './containers/message-input';
 import SetUsername from './containers/set-username';
+import Fonts from './styles/Fonts';
 
 class App extends React.Component {
   constructor() {
@@ -31,7 +32,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div style={{ paddingTop: 100, paddingBottom: 60 }}>
+      <div style={{ paddingTop: 100, paddingBottom: 60, fontFamily: Fonts.sansSerif }}>
         <Header appName="SLAKO" />
         <SetUsername
           username={ this.state.currentUser }
